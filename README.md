@@ -18,6 +18,7 @@
 ## 📌 目录
 
 - [🗺️ 阅读路线图](#️-阅读路线图)
+- [🧱 通用 Agent 地基必读（从经典中精选）](#-通用-agent-地基必读从经典中精选)
 - [📖 综述论文](#-综述论文-surveys)
 - [🧠 医学大模型](#-医学大模型-medical-llm)
 - [🤖 医学单智能体](#-医学单智能体-medical-single-agent)
@@ -30,6 +31,11 @@
 > 推荐新人按以下顺序阅读，逐步建立完整知识体系
 
 ```
+阶段零：先补通用 Agent 地基（2-3 天）
+──────────────────────────────────────────────────────────
+  0. 🧱 ReAct + Toolformer + Reflexion + Plan-and-Solve
+     └─ 先掌握 Agent 的 4 个核心能力：推理-行动、工具调用、自反馈、规划
+
 阶段一：了解全局（1-2 天）
 ──────────────────────────────────────────────────────────
   1. 📖 A Survey of LLMs for Healthcare（Kai He et al., 2023）
@@ -78,6 +84,74 @@
   🤖 可解释性  → CoD（诊断链）· AI-SCE 评估框架
   👥 前沿方向  → ColaCare · MMedAgent-RL · ClinicalAgents
 ```
+
+---
+
+## 🧱 通用 Agent 地基必读（从经典中精选）
+
+> 你给的表里论文很多，这里只保留**医学方向最必要**的通用 Agent 基石。  
+> 建议先读完这一组，再进入本仓库的医学 LLM/医学 Agent 论文。
+
+### 1. ReAct: Synergizing Reasoning and Acting in Language Models
+
+- **作者**：Shunyu Yao et al.（Google Research）
+- **时间**：2022
+- **链接**：[arXiv 2210.03629](https://arxiv.org/abs/2210.03629)
+- **为什么必读**：Agent 最核心范式（Reason + Act）。后续医疗 Agent 的问诊、检索、工具调用流程基本都能映射到 ReAct 思路。
+
+---
+
+### 2. Toolformer: Language Models Can Teach Themselves to Use Tools
+
+- **作者**：Timo Schick et al.（Meta FAIR）
+- **时间**：2023
+- **链接**：[arXiv 2302.04761](https://arxiv.org/abs/2302.04761)
+- **为什么必读**：解释了模型如何学会「何时调用外部工具」，这是医疗场景接入检索、指南库、计算器、影像工具的基础。
+
+---
+
+### 3. Reflexion: Language Agents with Verbal Reinforcement Learning
+
+- **作者**：Noah Shinn et al.
+- **时间**：2023
+- **链接**：[arXiv 2303.11366](https://arxiv.org/abs/2303.11366)
+- **为什么必读**：自我反思与错误修正机制，能直接提升医疗任务里的可靠性与稳健性。
+
+---
+
+### 4. Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning
+
+- **作者**：Lei Wang et al.
+- **时间**：2023
+- **链接**：[arXiv 2305.04091](https://arxiv.org/abs/2305.04091)
+- **为什么必读**：把复杂问题拆成计划再执行，对临床分步决策和差错控制非常实用。
+
+---
+
+### 5. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+
+- **作者**：Jason Wei et al.（Google Research）
+- **时间**：2022
+- **链接**：[arXiv 2201.11903](https://arxiv.org/abs/2201.11903)
+- **为什么必读**：虽然不是 Agent 论文，但它定义了推理提示的基础，是理解 ReAct/Plan-and-Solve 的前置知识。
+
+---
+
+### 6. Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection
+
+- **作者**：Akari Asai et al.
+- **时间**：2024
+- **链接**：[arXiv 2310.11511](https://arxiv.org/abs/2310.11511)
+- **为什么必读**：把检索与自我批判结合，特别适合医疗场景里「减少幻觉 + 引用证据」的需求。
+
+---
+
+### 7. AgentBench: Evaluating LLMs as Agents
+
+- **作者**：Xiao Liu et al.
+- **时间**：2023
+- **链接**：[arXiv 2308.03688](https://arxiv.org/abs/2308.03688)
+- **为什么必读**：学习 Agent 评测方法学，避免只看单一准确率；对你后续看医学 Agent benchmark 很关键。
 
 ---
 
